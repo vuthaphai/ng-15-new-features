@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardsService } from './shared/services/auth-guards.service';
 import { AuthService } from './auth/auth.service';
-import { AuthGuard } from './shared/auth.guard';
+import { authGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', 
   // canActivate: [AuthGuardsService], 
-  canActivate: [AuthGuard], 
+  canActivate: [authGuard], 
   component: HomeComponent},
   {path: 'auth', loadChildren:() => import('./auth/auth.module').then(m =>m.AuthModule)}
 ];
