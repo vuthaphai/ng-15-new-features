@@ -5,10 +5,15 @@ import { ItalicsFontDirective } from './italics-font.directive';
 @Directive({
   selector: '[appMouseHover]',
   standalone: true,
-  hostDirectives: [{directive: ItalicsFontDirective,outputs:['hover']}, {
-    directive: FontColorDirective,
-    inputs: ['color']
-  }]
+  hostDirectives: [
+    {
+      directive: ItalicsFontDirective, outputs:['hover']
+    }, 
+    {
+      directive: FontColorDirective,
+      inputs: ['color: changeColor']
+    }
+  ]
 })
 export class MouseHoverDirective {
 
