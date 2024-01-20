@@ -11,7 +11,7 @@ const routes: Routes = [
   // canActivate: [AuthGuardsService], 
   canActivate: [authGuard], 
   component: HomeComponent},
-  {path: 'auth', loadChildren:() => import('./auth/auth.module').then(m =>m.AuthModule)}
+  {path: 'auth', loadChildren:() => import('./auth/auth.module').then(m =>m.AuthModule)},
 ];
 
 @NgModule({
